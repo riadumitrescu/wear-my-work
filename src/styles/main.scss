@@ -1,0 +1,1051 @@
+// Variables
+$color-ink: #1A1A1A;
+$color-paper: #F7F7F5;
+$color-coral: #FF6B6B;
+
+// Typography
+$font-serif: 'DM Serif Display', serif;
+$font-sans: 'Inter', sans-serif;
+$font-mono: 'Courier Prime', monospace;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Reset & Base Styles
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: $font-sans;
+    color: $color-ink;
+    background-color: $color-paper;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+// Buttons
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    
+    &--primary {
+        background-color: $color-ink;
+        color: $color-paper;
+        
+        &:hover {
+            background-color: lighten($color-ink, 10%);
+            transform: translateY(-2px);
+        }
+    }
+    
+    &--secondary {
+        background-color: transparent;
+        color: $color-ink;
+        border: 2px solid $color-ink;
+        
+        &:hover {
+            background-color: $color-ink;
+            color: $color-paper;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Hero Section
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    
+    &__content {
+        max-width: 800px;
+    }
+    
+    &__title {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: rgba($color-ink, 0.8);
+    }
+}
+
+// How It Works Section
+.how-it-works {
+    padding: 6rem 2rem;
+    
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .step {
+        text-align: center;
+        padding: 2rem;
+        
+        &__icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        &__title {
+            font-size: 1.25rem;
+            font-family: $font-sans;
+        }
+    }
+}
+
+// Teaser Section
+.teaser {
+    padding: 6rem 2rem;
+    background-color: rgba($color-ink, 0.02);
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+// CTA Banner
+.cta-banner {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: rgba($color-ink, 0.02);
+    
+    &__title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+// Email Form
+.email-form {
+    padding: 6rem 2rem;
+    
+    &__container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    &__fields {
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    input {
+        padding: 1rem;
+        border: 1px solid rgba($color-ink, 0.1);
+        border-radius: 4px;
+        font-family: $font-sans;
+        
+        &:focus {
+            outline: none;
+            border-color: $color-ink;
+        }
+    }
+}
+
+// Founders Page Styles
+.founders-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: rgba($color-ink, 0.02);
+    
+    &__content {
+        max-width: 800px;
+    }
+    
+    &__title {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    &__subtitle {
+        font-size: 1.5rem;
+        color: rgba($color-ink, 0.8);
+    }
+}
+
+.founders-content {
+    padding: 6rem 2rem;
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    &__text {
+        .section-title {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+    &__description {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    &__list {
+        list-style: none;
+        margin-bottom: 2rem;
+        
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            
+            &::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: $color-coral;
+            }
+        }
+    }
+    
+    &__form {
+        background-color: rgba($color-ink, 0.02);
+        padding: 2rem;
+        border-radius: 8px;
+        
+        iframe {
+            border-radius: 4px;
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: $breakpoint-md) {
+    .hero {
+        &__title {
+            font-size: 3rem;
+        }
+        
+        &__subtitle {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .hero {
+        &__title {
+            font-size: 2.5rem;
+        }
+    }
+    
+    .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// Responsive Design for Founders Page
+@media (max-width: $breakpoint-lg) {
+    .founders-content {
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .founders-hero {
+        &__title {
+            font-size: 3rem;
+        }
+        
+        &__subtitle {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .founders-hero {
+        min-height: 50vh;
+        padding: 3rem 1rem;
+    }
+    
+    .founders-content {
+        padding: 4rem 1rem;
+    }
+}
+
+// Gallery Styles
+.gallery-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xl $spacing-md;
+    text-align: center;
+    background-color: rgba($color-ink, 0.02);
+    
+    &__content {
+        max-width: 800px;
+    }
+    
+    &__title {
+        font-size: 4rem;
+        margin-bottom: $spacing-md;
+    }
+    
+    &__subtitle {
+        font-size: 1.5rem;
+        color: rgba($color-ink, 0.8);
+    }
+}
+
+.gallery-filters {
+    padding: $spacing-lg $spacing-md;
+    background-color: $color-light;
+    
+    &__container {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-sm;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.filter-button {
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    background: none;
+    font-family: $font-sans;
+    font-size: 1rem;
+    color: rgba($color-ink, 0.6);
+    cursor: pointer;
+    transition: $transition-normal;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $color-ink;
+        transition: $transition-normal;
+    }
+    
+    &:hover, &.active {
+        color: $color-ink;
+        
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.gallery-grid {
+    padding: $spacing-xl $spacing-md;
+    
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: $spacing-lg;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.gallery-item {
+    cursor: pointer;
+    transition: $transition-normal;
+    
+    &:hover {
+        transform: translateY(-5px);
+        
+        .gallery-item__overlay {
+            opacity: 1;
+        }
+    }
+    
+    &__image {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        border-radius: $radius-md;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: $transition-normal;
+        }
+    }
+    
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color-ink, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-md;
+        opacity: 0;
+        transition: $transition-normal;
+        color: $color-paper;
+        text-align: center;
+    }
+    
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: $spacing-xs;
+    }
+    
+    &__creator {
+        font-size: 1rem;
+        opacity: 0.8;
+    }
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-ink, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    
+    &__content {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        max-height: 90vh;
+        overflow-y: auto;
+        background: $color-paper;
+        border-radius: $radius-lg;
+        padding: $spacing-lg;
+    }
+    
+    &__close {
+        position: absolute;
+        top: $spacing-md;
+        right: $spacing-md;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: $color-ink;
+        transition: $transition-normal;
+        
+        &:hover {
+            color: $color-coral;
+        }
+    }
+    
+    &__image {
+        margin-bottom: $spacing-lg;
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $radius-md;
+        }
+    }
+    
+    &__info {
+        text-align: center;
+    }
+    
+    &__title {
+        font-size: 2.5rem;
+        margin-bottom: $spacing-md;
+    }
+    
+    &__description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: $spacing-lg;
+        color: rgba($color-ink, 0.8);
+    }
+}
+
+// Responsive Design for Gallery
+@media (max-width: $breakpoint-lg) {
+    .gallery-grid {
+        &__container {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .gallery-hero {
+        &__title {
+            font-size: 3rem;
+        }
+        
+        &__subtitle {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .lightbox {
+        &__content {
+            width: 95%;
+            padding: $spacing-md;
+        }
+        
+        &__title {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .gallery-filters {
+        &__container {
+            gap: $spacing-xs;
+        }
+    }
+    
+    .filter-button {
+        padding: $spacing-xs $spacing-sm;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-item {
+        &__title {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+// Story Page Styles
+.story-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xl $spacing-md;
+    text-align: center;
+    background-color: rgba($color-ink, 0.02);
+    
+    &__content {
+        max-width: 800px;
+    }
+    
+    &__title {
+        font-size: 4rem;
+        margin-bottom: $spacing-sm;
+    }
+    
+    &__creator {
+        font-size: 1.5rem;
+        color: rgba($color-ink, 0.8);
+    }
+}
+
+.story-content {
+    padding: $spacing-xl $spacing-md;
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-xl;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    &__image {
+        position: sticky;
+        top: $spacing-xl;
+        height: fit-content;
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $radius-md;
+            margin-bottom: $spacing-md;
+            box-shadow: $shadow-lg;
+            transition: $transition-normal;
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+    
+    &__text {
+        .section-title {
+            text-align: left;
+            margin-bottom: $spacing-md;
+        }
+    }
+    
+    &__section {
+        margin-bottom: $spacing-xl;
+    }
+    
+    &__description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba($color-ink, 0.8);
+    }
+    
+    &__qr {
+        text-align: center;
+        padding: $spacing-lg;
+        background-color: $color-light;
+        border-radius: $radius-md;
+        
+        &-image {
+            width: 150px;
+            height: 150px;
+            margin-bottom: $spacing-sm;
+        }
+        
+        &-text {
+            font-family: $font-mono;
+            font-size: 0.9rem;
+            color: rgba($color-ink, 0.6);
+        }
+    }
+}
+
+.story-navigation {
+    padding: $spacing-xl $spacing-md;
+    background-color: $color-light;
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    &__link {
+        text-decoration: none;
+        color: $color-ink;
+        transition: $transition-normal;
+        
+        &:hover {
+            color: $color-coral;
+        }
+    }
+    
+    &__label {
+        display: block;
+        font-size: 0.9rem;
+        font-family: $font-mono;
+        color: rgba($color-ink, 0.6);
+        margin-bottom: $spacing-xs;
+    }
+    
+    &__title {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+}
+
+// Responsive Design for Story Page
+@media (max-width: $breakpoint-lg) {
+    .story-content {
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: $spacing-lg;
+        }
+        
+        &__image {
+            position: relative;
+            top: 0;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .story-hero {
+        &__title {
+            font-size: 3rem;
+        }
+        
+        &__creator {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .story-content {
+        &__description {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .story-navigation {
+        &__container {
+            flex-direction: column;
+            gap: $spacing-md;
+            text-align: center;
+        }
+    }
+}
+
+// Navigation Styles
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba($color-paper, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba($color-ink, 0.1);
+    height: 80px;
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $spacing-sm $spacing-md;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+    }
+    
+    &__logo {
+        font-family: $font-serif;
+        font-size: 1.5rem;
+        color: $color-ink;
+        text-decoration: none;
+        transition: $transition-normal;
+        
+        &:hover {
+            color: $color-coral;
+        }
+    }
+    
+    &__menu {
+        display: flex;
+        gap: $spacing-md;
+        
+        @media (max-width: $breakpoint-md) {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: $color-paper;
+            padding: $spacing-md;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid rgba($color-ink, 0.1);
+            height: auto;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            
+            &.active {
+                display: flex;
+            }
+        }
+    }
+    
+    &__link {
+        color: $color-ink;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: $transition-normal;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $color-coral;
+            transition: $transition-normal;
+        }
+        
+        &:hover::after {
+            width: 100%;
+        }
+        
+        &.active {
+            color: $color-coral;
+            
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    
+    &__toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: $spacing-xs;
+        
+        @media (max-width: $breakpoint-md) {
+            display: block;
+        }
+        
+        span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: $color-ink;
+            margin: 4px 0;
+            transition: $transition-normal;
+        }
+        
+        &.active {
+            span {
+                &:first-child {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+                
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                
+                &:last-child {
+                    transform: rotate(-45deg) translate(5px, -5px);
+                }
+            }
+        }
+    }
+}
+
+// Adjust main content to account for fixed nav
+main {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+// Mission Section
+.mission {
+    padding: $spacing-xl $spacing-md;
+    background-color: $color-light;
+    
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-xl;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: center;
+    }
+    
+    &__text {
+        .section-title {
+            text-align: left;
+            margin-bottom: $spacing-lg;
+        }
+    }
+    
+    &__description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: rgba($color-ink, 0.8);
+        margin-bottom: $spacing-xl;
+    }
+    
+    &__features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-lg;
+    }
+    
+    &__feature {
+        display: flex;
+        align-items: flex-start;
+        gap: $spacing-sm;
+        
+        &-icon {
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+            font-family: $font-sans;
+            line-height: 1.4;
+        }
+    }
+    
+    &__image {
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $radius-lg;
+            box-shadow: $shadow-lg;
+        }
+    }
+}
+
+// Testimonials Section
+.testimonials {
+    padding: $spacing-xl $spacing-md;
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.testimonial {
+    background-color: $color-light;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: $transition-normal;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-lg;
+    }
+    
+    &__image {
+        width: 100%;
+        aspect-ratio: 1;
+        overflow: hidden;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: $transition-normal;
+        }
+    }
+    
+    &__content {
+        padding: $spacing-lg;
+    }
+    
+    &__quote {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: rgba($color-ink, 0.8);
+        margin-bottom: $spacing-md;
+        font-style: italic;
+    }
+    
+    &__author {
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: $spacing-xs;
+        }
+        
+        p {
+            color: rgba($color-ink, 0.6);
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// Responsive Design for Mission and Testimonials
+@media (max-width: $breakpoint-lg) {
+    .mission {
+        &__content {
+            grid-template-columns: 1fr;
+            gap: $spacing-lg;
+        }
+        
+        &__image {
+            order: -1;
+        }
+    }
+    
+    .testimonials {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .mission {
+        &__features {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .testimonials {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+} 
