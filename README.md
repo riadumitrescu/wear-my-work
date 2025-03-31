@@ -1,10 +1,10 @@
-# Wear My Work
+# Build to Wear
 
-A minimal, editorial-style website that introduces the Wear My Work concept and facilitates the Founders Drop (10 free custom hoodies for creators at printing cost only).
+A minimal, editorial-style website that introduces the Build to Wear concept and facilitates the Founders Drop (10 free custom hoodies for creators at printing cost only).
 
 ## 🎨 Design Philosophy
 
-Wear My Work is not just a website — it's a soft, minimalist, emotional container for a creative movement. The design combines subtle visual storytelling with functional clarity, where every pixel and animation feels considered, intentional, and calm. It's premium without being loud, poetic without being confusing, and simple without being boring.
+Build to Wear is not just a website — it's a soft, minimalist, emotional container for a creative movement. The design combines subtle visual storytelling with functional clarity, where every pixel and animation feels considered, intentional, and calm. It's premium without being loud, poetic without being confusing, and simple without being boring.
 
 ## 🚀 Getting Started
 
@@ -113,24 +113,61 @@ The site can be deployed to any static hosting service. Recommended options:
 
 ### GitHub Pages Deployment
 
-1. Add the following to your `package.json`:
-```json
-{
-  "scripts": {
-    "deploy": "npm run build && gh-pages -d dist"
-  }
-}
+1. Create a new repository on GitHub named `build-to-wear`
+
+2. Push your code to the repository:
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/yourusername/build-to-wear.git
+git push -u origin main
 ```
 
-2. Install gh-pages:
+3. Install the gh-pages package:
 ```bash
 npm install --save-dev gh-pages
 ```
 
-3. Deploy:
+4. Deploy to GitHub Pages:
 ```bash
 npm run deploy
 ```
+
+5. Configure GitHub Pages:
+   - Go to your repository settings
+   - Navigate to "Pages" section
+   - Under "Source", select "gh-pages" branch
+   - Click "Save"
+
+6. Your site will be available at: `https://yourusername.github.io/build-to-wear/`
+
+### Custom Domain Setup
+
+If you want to use a custom domain (e.g., buildtowear.com):
+
+1. Create a CNAME file in your project root:
+```bash
+echo "www.buildtowear.com" > CNAME
+```
+
+2. Deploy again:
+```bash
+npm run deploy
+```
+
+3. Configure your domain's DNS settings:
+   - Add a CNAME record pointing to `yourusername.github.io`
+   - Add A records pointing to GitHub Pages IP addresses:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
+
+4. Wait for DNS propagation (can take up to 24 hours)
 
 ## 📱 Browser Support
 

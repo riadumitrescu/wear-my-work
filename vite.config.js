@@ -3,7 +3,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   root: '.',
-  base: '/',
+  base: '/build-to-wear/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
