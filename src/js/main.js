@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LocomotiveScroll from 'locomotive-scroll';
+import '../styles/main.scss';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -135,5 +136,18 @@ document.querySelector('.email-form__container').addEventListener('submit', asyn
     } catch (error) {
         submitButton.textContent = 'Error';
         submitButton.disabled = false;
+    }
+});
+
+// Navigation menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('.nav__toggle');
+    const navMenu = document.querySelector('.nav__menu');
+
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
     }
 }); 

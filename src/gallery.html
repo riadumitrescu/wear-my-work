@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Build to Wear</title>
     <link rel="icon" type="image/png" href="./assets/logo/logobuildtowear.png">
-    <link rel="stylesheet" href="./styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -30,11 +29,39 @@
         </div>
     </nav>
 
-    <main class="gallery">
-        <h1 class="gallery__title">Gallery</h1>
-        <div class="gallery__grid">
-            <!-- Gallery items will be dynamically loaded -->
-        </div>
+    <main>
+        <section class="gallery-hero">
+            <div class="gallery-hero__content">
+                <h1 class="gallery-hero__title">Gallery</h1>
+                <p class="gallery-hero__subtitle">Explore our collection of creative identities turned into wearable art</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="gallery-filters__container">
+                <button class="filter-button active">All</button>
+                <button class="filter-button">Developers</button>
+                <button class="filter-button">Artists</button>
+                <button class="filter-button">Designers</button>
+                <button class="filter-button">Writers</button>
+            </div>
+        </section>
+
+        <section class="gallery-grid">
+            <div class="gallery-grid__container">
+                <!-- Example gallery items -->
+                <div class="gallery-item">
+                    <div class="gallery-item__image">
+                        <img src="./assets/gallery/item1.jpg" alt="Gallery Item 1">
+                        <div class="gallery-item__overlay">
+                            <h3 class="gallery-item__title">Code Poetry</h3>
+                            <p class="gallery-item__creator">By Sarah Chen</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- More gallery items will be added dynamically -->
+            </div>
+        </section>
     </main>
 
     <script type="module" src="./js/main.js"></script>
