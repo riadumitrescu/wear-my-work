@@ -1,38 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-fouc">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build To Wear | Wearable Portfolios for Creators</title>
+    <title>Build to Wear | Turn Your Creative Work into Wearable Art</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="./styles/main.min.css" as="style">
+    <link rel="preload" href="./assets/logo/logo.svg" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" as="style">
+    
+    <!-- Prevent FOUC -->
+    <style>
+        .no-fouc {
+            visibility: hidden;
+        }
+        
+        /* Critical CSS */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Critical layout styles */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: #ffffff;
+        }
+
+        main {
+            padding-top: 80px;
+        }
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/logo/logobuildtowear.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/styles/main.scss">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/main.min.css">
 </head>
 <body>
     <nav class="nav">
         <div class="nav__container">
-            <a href="/" class="nav__logo">Build To Wear</a>
-            <div class="nav__menu">
-                <a href="/" class="nav__link active">Home</a>
-                <a href="/gallery.html" class="nav__link">Gallery</a>
-                <a href="/founders.html" class="nav__link">Founders Drop</a>
-                <a href="/about.html" class="nav__link">About</a>
-            </div>
-            <button class="nav__toggle" aria-label="Toggle menu">
+            <a href="./" class="nav__logo">
+                <img src="./assets/logo/logo.svg" alt="Build to Wear Logo" class="nav__logo-icon">
+                <span>Build to Wear</span>
+            </a>
+            <button class="nav__toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <div class="nav__menu">
+                <a href="./" class="nav__link active">Home</a>
+                <a href="./gallery.html" class="nav__link">Gallery</a>
+                <a href="./founders.html" class="nav__link">Founders</a>
+            </div>
         </div>
     </nav>
 
     <main>
         <section class="hero">
             <div class="hero__content">
-                <h1 class="hero__title">10 Creators. 10 Stories. One Hoodie at a Time.</h1>
-                <p class="hero__subtitle">We turn your creative journey into something you can wear.</p>
-                <a href="/founders.html" class="button button--primary">Apply for Founders Drop</a>
+                <h1 class="hero__title">Turn Your Creative Work Into Wearable Art</h1>
+                <p class="hero__subtitle">Express your creative identity through custom-designed hoodies that tell your story.</p>
+                <a href="./founders.html" class="button button--primary">Join the Founders Drop</a>
             </div>
         </section>
 
@@ -41,134 +84,62 @@
                 <div class="mission__text">
                     <h2 class="section-title">Our Mission</h2>
                     <p class="mission__description">
-                        Build To Wear exists to turn personal creative identity into something physical, memorable, and wearable. 
+                        Build to Wear exists to turn personal creative identity into something physical, memorable, and wearable. 
                         Our mission is to help people reflect their inner process on the outside — not through branding or merch, 
                         but through garments that embody their work, values, and voice.
                     </p>
-                    <div class="mission__features">
-                        <div class="mission__feature">
-                            <span class="mission__feature-icon">📚</span>
-                            <h3>A living archive of creator stories</h3>
-                        </div>
-                        <div class="mission__feature">
-                            <span class="mission__feature-icon">🔄</span>
-                            <h3>A rotating platform for custom drops</h3>
-                        </div>
-                        <div class="mission__feature">
-                            <span class="mission__feature-icon">🎨</span>
-                            <h3>A gallery for showcasing work-in-progress</h3>
-                        </div>
-                        <div class="mission__feature">
-                            <span class="mission__feature-icon">💭</span>
-                            <h3>A soft space for community storytelling</h3>
-                        </div>
-                    </div>
                 </div>
                 <div class="mission__image">
-                    <img src="/assets/mission/hoodie-mockup.jpg" alt="Build To Wear Hoodie Mockup">
-                </div>
-            </div>
-        </section>
-
-        <section class="how-it-works">
-            <h2 class="section-title">How It Works</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step__icon">📝</div>
-                    <h3 class="step__title">Submit your story</h3>
-                </div>
-                <div class="step">
-                    <div class="step__icon">🎨</div>
-                    <h3 class="step__title">We design your hoodie</h3>
-                </div>
-                <div class="step">
-                    <div class="step__icon">👕</div>
-                    <h3 class="step__title">You wear your journey</h3>
-                </div>
-                <div class="step">
-                    <div class="step__icon">✨</div>
-                    <h3 class="step__title">It gets featured in our gallery</h3>
+                    <img src="./assets/mockups/my_hoodie_folded.png" alt="Build to Wear Folded Hoodie" class="mission__image-main">
                 </div>
             </div>
         </section>
 
         <section class="testimonials">
-            <h2 class="section-title">Creator Stories</h2>
             <div class="testimonials__grid">
                 <div class="testimonial">
-                    <div class="testimonial__image">
-                        <img src="/assets/testimonials/sarah-chen.jpg" alt="Sarah Chen">
-                    </div>
                     <div class="testimonial__content">
                         <p class="testimonial__quote">
-                            "Build To Wear helped me express my identity as both a developer and an artist. 
+                            "Build to Wear helped me express my identity as both a developer and an artist. 
                             My hoodie is more than just clothing—it's a conversation starter about the beauty of code."
                         </p>
                         <div class="testimonial__author">
                             <h4>Sarah Chen</h4>
-                            <p>Full-stack Developer & Poet</p>
+                            <p>Software Engineer & Digital Artist</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
-                    <div class="testimonial__image">
-                        <img src="/assets/testimonials/marcus-rodriguez.jpg" alt="Marcus Rodriguez">
-                    </div>
                     <div class="testimonial__content">
                         <p class="testimonial__quote">
-                            "The process of translating my design philosophy into a wearable piece was incredibly 
-                            meaningful. It's like wearing my portfolio."
+                            "As a designer, I believe in the power of personal expression through wearable art. 
+                            That's why I created Build to Wear - to help creators turn their work into unique, 
+                            meaningful pieces that tell their story."
                         </p>
                         <div class="testimonial__author">
-                            <h4>Marcus Rodriguez</h4>
-                            <p>UI/UX Designer</p>
+                            <h4>Maria Dumitrescu</h4>
+                            <p>Founder & Designer, Build to Wear</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial__image">
-                        <img src="/assets/testimonials/luna-patel.jpg" alt="Luna Patel">
-                    </div>
-                    <div class="testimonial__content">
-                        <p class="testimonial__quote">
-                            "My hoodie captures the essence of my music in a way that words never could. 
-                            It's a wearable piece of my creative journey."
-                        </p>
-                        <div class="testimonial__author">
-                            <h4>Luna Patel</h4>
-                            <p>Composer & Sound Artist</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="teaser">
-            <h2 class="section-title">A few stories we've already told</h2>
-            <div class="teaser__grid">
-                <!-- Teaser items will be added dynamically -->
             </div>
         </section>
 
         <section class="cta-banner">
             <div class="cta-banner__content">
-                <h2 class="cta-banner__title">Want your story to be wearable?</h2>
-                <a href="/founders.html" class="button button--secondary">Apply now</a>
+                <h2 class="cta-banner__title">Ready to Wear Your Story?</h2>
+                <a href="./founders.html" class="button button--primary">Apply for Founders Drop</a>
             </div>
-        </section>
-
-        <section class="email-form">
-            <h2 class="section-title">Join the waitlist for future drops</h2>
-            <form class="email-form__container" action="https://buttondown.email/api/emails/subscribe" method="post">
-                <div class="email-form__fields">
-                    <input type="text" name="name" placeholder="Your name" required>
-                    <input type="email" name="email" placeholder="Your email" required>
-                </div>
-                <button type="submit" class="button button--primary">Subscribe</button>
-            </form>
         </section>
     </main>
 
-    <script type="module" src="/src/js/main.js"></script>
+    <!-- Load scripts -->
+    <script>
+        // Remove no-fouc class when styles are loaded
+        window.addEventListener('load', function() {
+            document.documentElement.classList.remove('no-fouc');
+        });
+    </script>
+    <script type="module" src="./js/main.js" defer></script>
 </body>
 </html> 
