@@ -1051,4 +1051,15 @@ main {
             grid-template-columns: 1fr;
         }
     }
+}
+
+.apply {
+    padding: 4rem 2rem;
+    background-color: var(--color-background);
+
+    &__form {
+        max-width: 800px;
+        margin: 2rem auto;
+        min-height: 600px;
+    }
 } 
