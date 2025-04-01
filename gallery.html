@@ -1,117 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" class="no-fouc">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Build to Wear</title>
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="./styles/main.min.css" as="style">
-    <link rel="preload" href="./assets/logo/logo.svg" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" as="style">
-    
-    <!-- Prevent FOUC -->
-    <style>
-        .no-fouc {
-            visibility: hidden;
-        }
-        
-        /* Critical CSS */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #ffffff;
-        }
-
-        /* Critical layout styles */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: #ffffff;
-        }
-
-        main {
-            padding-top: 80px;
-        }
-    </style>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/logo/logobuildtowear.png">
-    
-    <!-- Fonts -->
+    <title>Gallery | Build To Wear</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="./styles/main.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/main.scss">
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav__container">
-            <a href="./" class="nav__logo">
-                <img src="./assets/logo/logo.svg" alt="Build to Wear Logo" class="nav__logo-icon">
-                <span>Build to Wear</span>
-            </a>
-            <button class="nav__toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav__menu">
-                <a href="./" class="nav__link">Home</a>
-                <a href="./gallery.html" class="nav__link active">Gallery</a>
-                <a href="./founders.html" class="nav__link">Founders</a>
-            </div>
-        </div>
-    </nav>
-
     <main>
         <section class="gallery-hero">
             <div class="gallery-hero__content">
-                <h1 class="gallery-hero__title">Gallery</h1>
-                <p class="gallery-hero__subtitle">Explore our collection of creative identities turned into wearable art</p>
+                <h1 class="gallery-hero__title">Creator Stories</h1>
+                <p class="gallery-hero__subtitle">Explore the wearable journeys of our creators</p>
             </div>
         </section>
 
         <section class="gallery-filters">
             <div class="gallery-filters__container">
-                <button class="filter-button active">All</button>
-                <button class="filter-button">Developers</button>
-                <button class="filter-button">Artists</button>
-                <button class="filter-button">Designers</button>
-                <button class="filter-button">Writers</button>
+                <button class="filter-button active" data-filter="all">All</button>
+                <button class="filter-button" data-filter="design">Design</button>
+                <button class="filter-button" data-filter="code">Code</button>
+                <button class="filter-button" data-filter="art">Art</button>
+                <button class="filter-button" data-filter="music">Music</button>
             </div>
         </section>
 
         <section class="gallery-grid">
             <div class="gallery-grid__container">
-                <!-- Example gallery items -->
-                <div class="gallery-item">
-                    <div class="gallery-item__image">
-                        <img src="./assets/gallery/item1.jpg" alt="Gallery Item 1">
-                        <div class="gallery-item__overlay">
-                            <h3 class="gallery-item__title">Code Poetry</h3>
-                            <p class="gallery-item__creator">By Sarah Chen</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- More gallery items will be added dynamically -->
+                <!-- Gallery items will be populated dynamically -->
             </div>
         </section>
+
+        <div class="lightbox">
+            <div class="lightbox__content">
+                <button class="lightbox__close">&times;</button>
+                <div class="lightbox__image"></div>
+                <div class="lightbox__info">
+                    <h2 class="lightbox__title"></h2>
+                    <p class="lightbox__description"></p>
+                    <a href="#" class="lightbox__link button button--secondary">View Full Story</a>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- Load scripts -->
-    <script>
-        // Remove no-fouc class when styles are loaded
-        window.addEventListener('load', function() {
-            document.documentElement.classList.remove('no-fouc');
-        });
-    </script>
-    <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="/src/js/gallery.js"></script>
 </body>
 </html> 

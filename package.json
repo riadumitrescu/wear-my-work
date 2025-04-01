@@ -1,25 +1,31 @@
 {
-  "name": "wear-my-work",
+  "name": "build-to-wear",
   "version": "1.0.0",
-  "description": "Build to Wear - Turn your creative work into wearable art",
+  "description": "A minimal, editorial-style website for Build to Wear",
+  "main": "index.js",
   "scripts": {
-    "build:css": "sass src/styles/main.scss:src/styles/main.css && postcss src/styles/main.css -o src/styles/main.min.css",
-    "watch:css": "sass --watch src/styles/main.scss:src/styles/main.css",
-    "start": "npm run watch:css",
-    "build": "npm run build:css"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "next": "^14.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "^5.0.0-beta.11",
+    "next": "^15.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
-    "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.3",
-    "postcss": "^8.4.35",
-    "postcss-cli": "^11.0.0",
-    "sass": "^1.70.0"
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.6",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.86.1",
+    "vite": "^5.1.3"
   }
 }

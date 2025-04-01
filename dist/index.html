@@ -1,63 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build to Wear | Wearable Portfolios for Creators</title>
-    <link rel="icon" type="image/png" href="/build-to-wear/assets/logobuildtowear-CXTp-Z5J.png">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/build-to-wear/assets/main-D6kggUQD.js"></script>
-</head>
-<body>
-    <nav class="nav">
-        <div class="nav__container">
-            <a href="./" class="nav__logo">
-                <img src="./assets/outline_hoodie_logo.svg" alt="Build to Wear Logo" class="nav__logo-icon">
-                <span>Build to Wear</span>
-            </a>
-            <button class="nav__toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav__menu">
-                <a href="./" class="nav__link active">Home</a>
-                <a href="./gallery.html" class="nav__link">Gallery</a>
-                <a href="./founders.html" class="nav__link">Founders</a>
-            </div>
-        </div>
-    </nav>
+{% extends "templates/base.html" %}
 
-    <section class="mission">
-        <div class="mission__content">
-            <div class="mission__text">
-                <h2 class="section-title">Our Mission</h2>
-                <p class="mission__description">
-                    Build to Wear exists to turn personal creative identity into something physical, memorable, and wearable. 
-                    Our mission is to help people reflect their inner process on the outside — not through branding or merch, 
-                    but through garments that embody their work, values, and voice.
-                </p>
-            </div>
-            <div class="mission__image">
-                <img src="./assets/mission/hoodie-mockup.jpg" alt="Build to Wear Hoodie Mockup">
-            </div>
-        </div>
-    </section>
+{% block title %}Build to Wear - Turn Your Creative Work into Wearable Art{% endblock %}
 
-    <div class="testimonial">
-        <div class="testimonial__image">
-            <img src="./assets/testimonials/sarah-chen.jpg" alt="Sarah Chen">
-        </div>
-        <div class="testimonial__content">
-            <p class="testimonial__quote">
-                "Build to Wear helped me express my identity as both a developer and an artist. 
-                My hoodie is more than just clothing—it's a conversation starter about the beauty of code."
-            </p>
+{% block content %}
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">Turn Your Creative Work into Wearable Art</h1>
+        <p class="hero__subtitle">Custom hoodies that tell your creative story</p>
+        <div class="hero__cta">
+            <a href="/founders" class="button button--primary button--large">Join the Founders Drop</a>
+            <a href="/gallery" class="button button--secondary button--large">View Gallery</a>
         </div>
     </div>
+</section>
 
-</body>
-</html> 
+<section class="mission">
+    <div class="mission__content">
+        <div class="mission__text">
+            <h2 class="section-title">Our Mission</h2>
+            <p class="mission__description">
+                We believe every creative journey deserves to be worn. Build to Wear transforms your work into unique, 
+                high-quality hoodies that tell your story. Each piece is a testament to your creative process, 
+                your values, and your impact.
+            </p>
+            <p class="mission__description">
+                Whether you're a developer, designer, artist, or creator of any kind, we work with you to create 
+                a custom piece that truly represents your creative identity.
+            </p>
+        </div>
+        <div class="mission__image">
+            <img src="/public/assets/mockups/unisex-oversized-hoodie-black-front-2-67ec3e01455e0.png" 
+                 alt="Black Hoodie Front View" 
+                 class="mission__image-main">
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2 class="section-title">Creator Stories</h2>
+    <div class="testimonials__grid">
+        <div class="testimonial">
+            <div class="testimonial__content">
+                <p class="testimonial__quote">
+                    "Build to Wear turned my code into something I can actually wear. The attention to detail 
+                    and the way they incorporated my work into the design is incredible."
+                </p>
+                <div class="testimonial__author">
+                    <h4>Sarah Chen</h4>
+                    <p>Software Engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial">
+            <div class="testimonial__content">
+                <p class="testimonial__quote">
+                    "Finally, merch that actually means something. My hoodie tells the story of my creative 
+                    process, not just my logo."
+                </p>
+                <div class="testimonial__author">
+                    <h4>Marcus Rodriguez</h4>
+                    <p>Digital Artist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="cta-banner__content">
+        <h2 class="cta-banner__title">Ready to Wear Your Work?</h2>
+        <a href="/founders" class="button button--primary button--large">Join the Founders Drop</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add any page-specific scripts here
+</script>
+{% endblock %} 
